@@ -9,27 +9,32 @@
 <body>
 
     <?php
-    function getPES ($PocetNAkazenych = rand (1,9999999999)){
+    function getPES ( int $PocetNakazenych){
         
 
-        if ($PocetNakazenych <= 10000) {
-                echo 1;
+        if (($PocetNakazenych > 0) && ($PocetNakazenych <= 10000)) {
+                return "PES 1";
         }
-            elseif ($PocetNakazenych <=50000) {
-                echo 2;
+            elseif (($PocetNakazenych > 10001) && ($PocetNakazenych <=50000)) {
+                return "PES 2 ";
             }
-            elseif ($PocetNakazenych <=100000)) {
-                echo 3;
+
+
+            elseif   (($PocetNakazenych > 50001) && ($PocetNakazenych <=100000)) {
+                return "PES 3";
             }
-            elseif ($PocetNakazenych <200000) {
-                echo 4;
+            elseif (($PocetNakazenych > 1000001) && ($PocetNakazenych <200000)) {
+                return "PES 4 ";
             }
-            else {
+            elseif ($PocetNakazenych > 200001 ) {
+                return "PES 5";
+            }
                 
-            }   
     }
 
-    
+    echo getPES (rand (1,313131));
+
+   
 
     
     ?>
